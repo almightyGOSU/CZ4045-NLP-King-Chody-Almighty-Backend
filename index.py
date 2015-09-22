@@ -4,7 +4,6 @@ import CSourceManager
 from nltk.corpus import brown
 
 app = Flask(__name__)
-app.debug=True
 
 def validateJson(pObjRequest):
 	if(not pObjRequest.json):
@@ -40,4 +39,5 @@ def getSource(source_id):
 	return "hello"
 
 if __name__ == "__main__":
+	app.debug=True
 	app.run()
