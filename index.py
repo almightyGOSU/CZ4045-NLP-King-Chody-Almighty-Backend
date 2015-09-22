@@ -11,7 +11,7 @@ def validateJson(pObjRequest):
 
 @app.route("/", methods=["GET"])
 def index():
-	strOutput = "";
+	strOutput = ""
 	for strWord in brown.words():
 		strOutput += strWord
 		strOutput += " , "
