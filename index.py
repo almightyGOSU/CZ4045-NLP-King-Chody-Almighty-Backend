@@ -1,6 +1,7 @@
 from flask import Flask, jsonify ,request, abort
 import CKeywordManager
 import CSourceManager
+from nltk.corpus import brown
 
 app = Flask(__name__)
 
@@ -10,7 +11,12 @@ def validateJson(pObjRequest):
 
 @app.route("/", methods=["GET"])
 def index():
-	return "Hello World"
+	strOutput = "";
+	for strWord in brown.words():
+		strOutput += strWord
+		strOutput += " , "
+
+	return strOutput
 
 @app.route("/keywords", methods=["GET"])
 def getKeywords():
