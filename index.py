@@ -4,6 +4,7 @@ import CSourceManager
 from nltk.corpus import brown
 
 app = Flask(__name__)
+app.debug=True
 
 def validateJson(pObjRequest):
 	if(not pObjRequest.json):
