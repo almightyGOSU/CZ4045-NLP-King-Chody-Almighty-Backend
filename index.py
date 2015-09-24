@@ -1,6 +1,7 @@
 from flask import Flask, jsonify ,request, abort
 import CKeywordManager
 import CSourceManager
+import config
 from CCorpusManager import CCorpusManager
 
 from nltk.corpus import brown
