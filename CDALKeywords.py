@@ -7,9 +7,9 @@ def getAllKeywords():
 	    with objConnection.cursor() as objCursor:
 	        # Read a single record
 	        strSQL = "SELECT strKeywords FROM tblKeywords"
-	        cursor.execute(strSQL)
-        	lstKeywords = list(objCursor.fetchall())
+	        objCursor.execute(strSQL)
+        	lstKeywords = [row[0] for row in objCursor.fetchall()]
 	finally:
-   		connection.close()
+   		objConnection.close()
 
 	return lstKeywords

@@ -1,7 +1,8 @@
 import config
+import pymysql
 
 def getDBConnection():
-	return pymsql.connect(
+	return pymysql.connect(
 			host= config.DB_HOST,
 			user=config.DB_USER,
 			password=config.DB_PASSWORD,
