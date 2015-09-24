@@ -1,6 +1,8 @@
 from flask import Flask, jsonify ,request, abort
 import CKeywordManager
 import CSourceManager
+from CCorpusManager import CCorpusManager
+
 from nltk.corpus import brown
 
 app = Flask(__name__)
@@ -15,6 +17,15 @@ def index():
 	for strWord in brown.words():
 		strOutput += strWord
 		strOutput += " , "
+
+	return strOutput
+
+@app.route("/types", methods=["GET"])
+def getTypes():
+	strOutput = ""
+	for strWord in CCorpusManager.getTokenList():
+		strOutput += strWord
+		strOutput += "<br/>"
 
 	return strOutput
 
@@ -40,4 +51,6 @@ def getSource(source_id):
 
 if __name__ == "__main__":
 	app.debug = True
+	CCorpusManager.loadTokens()
+
 	app.run()

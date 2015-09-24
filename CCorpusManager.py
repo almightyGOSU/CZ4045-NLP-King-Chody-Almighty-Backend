@@ -1,15 +1,23 @@
-lstTokens = {};
+import threading
+import CDALType
 
-def addToken(pStrToken):
-	with self.lock:
-		lstTokens.add(pStrToken)
+class CCorpusManager:
+	objLock = threading.Lock()
+	lstTokens = set();
 
-def addTokens(pSetTokens):
-	with self.lock:
-		lstTokens.union(pSetTokens)
+	def addToken(pStrToken):
+		with oCCorpusManager.bjLock:
+			CCorpusManager.lstTokens.add(pStrToken)
 
-def getTokenCount():
-	return len(lstTokens)
+	def addTokens(pSetTokens):
+		with CCorpusManager.objLock:
+			CCorpusManager.lstTokens.union(pSetTokens)
 
-def getTokenList():
-	return lstTokens
+	def getTokenCount():
+		return len(CCorpusManager.lstTokens)
+
+	def getTokenList():
+		return CCorpusManager.lstTokens
+
+	def loadTokens():
+		CCorpusManager.lstTokens = CDALType.getTypes()
