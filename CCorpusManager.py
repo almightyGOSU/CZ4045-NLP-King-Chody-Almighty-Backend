@@ -17,7 +17,8 @@ class CCorpusManager:
 		return len(CCorpusManager.lstTokens)
 
 	def getTokenList():
-		return CCorpusManager.lstTokens
+		return CDALType.getTypes()
+##		return CCorpusManager.lstTokens
 
 	def loadTokens():
 		CCorpusManager.lstTokens = CDALType.getTypes()

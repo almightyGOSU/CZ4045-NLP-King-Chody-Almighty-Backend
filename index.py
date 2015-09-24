@@ -52,6 +52,6 @@ def getSource(source_id):
 
 if __name__ == "__main__":
 	app.debug = True
-	CCorpusManager.loadTokens()
+	##CCorpusManager.loadTokens()
 
 	app.run()
