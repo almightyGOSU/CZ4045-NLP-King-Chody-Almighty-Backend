@@ -1,6 +1,10 @@
 import CDBManager
 
 def insertNewSource(pObjSource):
+
+	if pObjSource.getSentenceCount() < 5 and pObjSource.getTokenCount() < 80:
+		return -99
+
 	objConnection = CDBManager.getDBConnection()
 
 	try:
