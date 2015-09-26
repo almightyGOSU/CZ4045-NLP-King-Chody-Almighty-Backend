@@ -14,10 +14,17 @@ def validateJson(pObjRequest):
 
 @app.route("/", methods=["GET"])
 def index():
+
+	intCount = 0
+
 	strOutput = ""
 	for strWord in brown.words():
 		strOutput += strWord
 		strOutput += " , "
+		intCount++;
+
+		if intCount >=50:
+			return strOutput
 
 	return strOutput
 
