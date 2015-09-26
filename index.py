@@ -1,3 +1,11 @@
+import sys
+reload(sys)
+sys.setdefaultencoding('utf-8')
+
+from flask.ext.restful import Api
+from flask.ext.restful.representations.json import output_json
+output_json.func_globals['settings'] = {'ensure_ascii': False, 'encoding': 'utf8'}
+
 from flask import Flask, jsonify ,request, abort
 import CKeywordManager
 import CSourceManager
@@ -38,8 +46,6 @@ def getKeywords():
 @app.route("/source" , methods=["POST"])
 def addSource():
 	validateJson(request)
-
-	return request.json
 
 	strUri = CSourceManager.addNewSource(request.json)
 
