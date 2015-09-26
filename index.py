@@ -39,6 +39,8 @@ def getKeywords():
 def addSource():
 	validateJson(request)
 
+	return request.json
+
 	strUri = CSourceManager.addNewSource(request.json)
 
 	if strUri == None:
