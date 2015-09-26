@@ -37,9 +37,9 @@ def getKeywords():
 
 @app.route("/source" , methods=["POST"])
 def addSource():
-	validateJson(request)
+	##validateJson(request)
 
-	strUri = CSourceManager.addNewSource(request.json)
+	strUri = CSourceManager.addNewSource(request.get_json())
 
 	if strUri == None:
 		abort(503)
