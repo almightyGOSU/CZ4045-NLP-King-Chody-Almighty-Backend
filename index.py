@@ -21,7 +21,7 @@ def index():
 	for strWord in brown.words():
 		strOutput += strWord
 		strOutput += " , "
-		intCount++;
+		intCount = intCount + 1
 
 		if intCount >=50:
 			return strOutput
