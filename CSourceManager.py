@@ -7,7 +7,8 @@ import CDALType
 def addNewSource(pJsonSource):
 
 	objSource = CSource(pJsonSource["URL"], 
-				pJsonSource["Content"])
+				pJsonSource["Content"],
+				pJsonSource["Source"])
 
 	intId = CDALSource.insertNewSource(
 				objSource

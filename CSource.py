@@ -2,11 +2,12 @@ from nltk.tokenize import sent_tokenize, word_tokenize
 
 class CSource:
 
-	def __init__(self, pStrUrl, pStrContents):
+	def __init__(self, pStrUrl, pStrContents, pStrSource):
 		self._strURL = pStrUrl
 		self._lstSentence = sent_tokenize(pStrContents)
 		self._lstToken = word_tokenize(pStrContents)
 		self._lstType = set(token.lower() for token in self._lstToken)
+		self._strSource = pStrSource;
 
 	def getURL(self):
 		return self._strURL
@@ -22,3 +23,6 @@ class CSource:
 
 	def getTypes(self):
 		return self._lstType
+
+	def getSource(self):
+		return self._strSource;
