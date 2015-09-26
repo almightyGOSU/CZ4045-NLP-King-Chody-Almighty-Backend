@@ -3,14 +3,10 @@ import CKeywordManager
 import CSourceManager
 import config
 from CCorpusManager import CCorpusManager
-from flask.ext.restful import Api
-from flask.ext.restful.representations.json import output_json
 
 from nltk.corpus import brown
 
 app = Flask(__name__)
-
-output_json.func_globals['settings'] = {'ensure_ascii': False, 'encoding': 'utf8'}
 
 def validateJson(pObjRequest):
 	if(not pObjRequest.json):
