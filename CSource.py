@@ -1,4 +1,5 @@
 from nltk.tokenize import sent_tokenize, word_tokenize
+from collection import Counter
 
 class CSource:
 
@@ -6,7 +7,11 @@ class CSource:
 		self._strURL = pStrUrl
 		self._lstSentence = sent_tokenize(pStrContents)
 		self._lstToken = word_tokenize(pStrContents)
-		self._lstType = set(token.lower() for token in self._lstToken)
+		##self._lstType = set(token.lower() for token in self._lstToken)
+
+		lstLower = [token.lower() for token in self._lstToken]
+
+		self._lstType = [(token,lstLower.count(token), lstLower.count(token)) for token in set(lstLower)]
 		self._strSource = pStrSource;
 
 	def getURL(self):

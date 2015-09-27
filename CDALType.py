@@ -6,7 +6,7 @@ def insertNewTypes(pSetTypes):
 	try:
 		with objConnection.cursor() as objCursor:
 
-			strSQL = "INSERT INTO tblTypes (strWord, intCount) VALUES (%s,1) ON DUPLICATE KEY UPDATE intCount=intCount+1;"
+			strSQL = "INSERT INTO tblTypes (strWord, intCount) VALUES (%s,%s) ON DUPLICATE KEY UPDATE intCount=intCount+%s;"
 
 			objCursor.executemany(strSQL, pSetTypes)
 			objConnection.commit()
