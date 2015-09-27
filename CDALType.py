@@ -7,7 +7,7 @@ def insertNewTypes(pSetTypes):
 		with objConnection.cursor() as objCursor:
 
 			strSQL = "CALL insertType(%s,%s);"
-
+			
 			objCursor.executemany(strSQL, pSetTypes)
 			objConnection.commit()
 
