@@ -10,7 +10,7 @@ class CSource:
 
 		lstLower = [token.lower() for token in self._lstToken]
 
-		self._lstType = [(token,lstLower.count(token), lstLower.count(token)) for token in set(lstLower)]
+		self._lstType = [(token,lstLower.count(token)) for token in set(lstLower)]
 		self._strSource = pStrSource;
 
 	def getURL(self):

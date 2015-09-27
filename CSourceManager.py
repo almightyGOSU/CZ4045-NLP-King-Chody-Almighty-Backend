@@ -17,7 +17,7 @@ def addNewSource(pJsonSource):
 	if intId < 0:
 		return None
 
-	CCorpusManager.addTokens(objSource.getTypes());
+##	CCorpusManager.addTokens(objSource.getTypes());
 	CDALType.insertNewTypes(objSource.getTypes())
 
 	return url_for('getSource', source_id=intId, _external=True)

@@ -6,14 +6,15 @@ def insertNewTypes(pSetTypes):
 	try:
 		with objConnection.cursor() as objCursor:
 
-			strSQL = "INSERT INTO tblTypes (strWord, intCount) VALUES (%s,%s) ON DUPLICATE KEY UPDATE intCount=intCount+%s;"
+			strSQL = "CALL insertType(%s,%s);"
 
 			objCursor.executemany(strSQL, pSetTypes)
 			objConnection.commit()
 
 			intId=1
-	except:
+	except Exception as e:
 		intId = -99
+		print (e)
 	finally:
 		objConnection.close()
 
