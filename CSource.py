@@ -1,5 +1,4 @@
 from nltk.tokenize import sent_tokenize, word_tokenize
-from collection import Counter
 
 class CSource:
 
