@@ -29,6 +29,6 @@ def insertNewSource(pObjSource):
 	finally:
 		objConnection.close()
 
-	CFileManager.saveToFile(intId, pObjSource.getContents())
+	CFileManager.saveToFile(str(intId), pObjSource.getContents())
 
 	return intId
