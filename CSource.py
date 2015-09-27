@@ -4,6 +4,7 @@ class CSource:
 
 	def __init__(self, pStrUrl, pStrContents, pStrSource):
 		self._strURL = pStrUrl
+		self._strContents = pStrContents
 		self._lstSentence = sent_tokenize(pStrContents)
 		self._lstToken = word_tokenize(pStrContents)
 		##self._lstType = set(token.lower() for token in self._lstToken)
@@ -30,4 +31,7 @@ class CSource:
 		return self._lstType
 
 	def getSource(self):
-		return self._strSource;
+		return self._strSource
+
+	def getContents(self):
+		return self._strContents

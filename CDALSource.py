@@ -1,4 +1,5 @@
 import CDBManager
+import CFileManager
 
 def insertNewSource(pObjSource):
 
@@ -27,5 +28,7 @@ def insertNewSource(pObjSource):
 		intId = -99
 	finally:
 		objConnection.close()
+
+	CFileManager.saveToFile(intId, pObjSource.getContents())
 
 	return intId
