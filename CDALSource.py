@@ -37,6 +37,8 @@ def getDocumentsCount():
 
 	objConnection = CDBManager.getDBConnection()
 
+	return "owen"
+
 	try:
 		with objConnection.cursor() as objCursor:
 			strSQL = "SELECT MAX(intDocNo) FROM tblCorpus"
