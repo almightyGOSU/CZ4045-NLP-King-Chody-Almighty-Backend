@@ -1,6 +1,24 @@
 import CDBManager
 import CFileManager
 
+def getSource(pIntId):
+	objConnection = CDBManager.getDBConnection()
+
+	try:
+		with objConnection.cursor() as objCursor:
+			strSQL = "SELECT * FROM  tblCorpus WHERE  intDocNo =%s"
+
+			objCursor.execute(strSQL, (pIntId))
+
+			aryResult = objCursor.fetchone()
+	except:
+		aryResult = []
+	finally:
+		objConnection.close()
+
+	return aryResult
+
+
 def insertNewSource(pObjSource):
 
 	if pObjSource.getSource() == "Social" and pObjSource.getTokenCount() < 20:
@@ -49,4 +67,4 @@ def getDocumentsCount():
 	finally:
 		objConnection.close()
 
-	return str(intCount)
+	return intCount

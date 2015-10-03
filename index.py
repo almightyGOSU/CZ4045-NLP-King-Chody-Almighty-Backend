@@ -55,11 +55,11 @@ def addSource():
 
 @app.route("/source/length")
 def getDocumentCount():
-	return CCorpusManager.getDocumentsCount()
+	return str(CCorpusManager.getDocumentsCount())
 
 @app.route("/source/<int:source_id>", methods=["GET"])
 def getSource(source_id):
-	return "hello"
+	return CSourceManager.getSource(source_id)
 
 if __name__ == "__main__":
 	app.debug = True

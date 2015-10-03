@@ -21,3 +21,6 @@ def addNewSource(pJsonSource):
 	CDALType.insertNewTypes(objSource.getTypes())
 
 	return url_for('getSource', source_id=intId, _external=True)
+
+def getSource(pIntId):
+	return CDALSource.getSource(pIntId)
