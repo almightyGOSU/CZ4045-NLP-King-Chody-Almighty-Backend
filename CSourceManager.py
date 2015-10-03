@@ -32,9 +32,5 @@ def getSource(pIntId):
 
 def getFullSource():
 
-	strOutput = ""
-
 	for intCount in range(1, CCorpusManager.getDocumentsCount()):
-		strOutput += CFileManager.readFromFile(str(intCount))
-
-	return strOutput
+		yield CFileManager.readFromFile(str(intCount))

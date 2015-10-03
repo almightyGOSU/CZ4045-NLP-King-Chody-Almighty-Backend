@@ -68,7 +68,7 @@ def getSource(source_id):
 
 @app.route("/source/all")
 def getFullSource():
-	return str(CSourceManager.getFullSource())
+	return Response(CSourceManager.getFullSource(), mimetype='text/html')
 
 if __name__ == "__main__":
 	app.debug = True
