@@ -53,9 +53,9 @@ def addSource():
 
 	return jsonify({"insert-uri":strUri}) , 201
 
-@app.route("/sources/length")
+@app.route("/source/length")
 def getDocumentCount():
-	return CCorpusManager.getDocumentsCount();
+	return CCorpusManager.getDocumentsCount()
 
 @app.route("/source/<int:source_id>", methods=["GET"])
 def getSource(source_id):
