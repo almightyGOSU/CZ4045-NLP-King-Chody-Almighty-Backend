@@ -33,7 +33,7 @@ def insertNewSource(pObjSource):
 
 	return intId
 
-def getDocumentCount():
+def getDocumentsCount():
 	try:
 		with objConnection.cursor() as objCursor:
 

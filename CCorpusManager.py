@@ -25,5 +25,4 @@ class CCorpusManager:
 		CCorpusManager.lstTokens = CDALType.getTypes()
 
 	def getDocumentsCount():
-		return "dads"
 		return CDALSource.getDocumentsCount()
