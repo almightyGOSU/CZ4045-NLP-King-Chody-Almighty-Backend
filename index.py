@@ -55,6 +55,7 @@ def addSource():
 
 @app.route("/source/length")
 def getDocumentCount():
+	return "dadsdas"
 	return CCorpusManager.getDocumentsCount()
 
 @app.route("/source/<int:source_id>", methods=["GET"])
