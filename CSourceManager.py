@@ -29,3 +29,12 @@ def getSource(pIntId):
 	objRow[0] = CFileManager.readFromFile(str(objRow[0]))
 
 	return objRow
+
+def getFullSource():
+
+	strOutput = ""
+
+	for intCount in CCorpusManager.getDocumentsCount():
+		strOutput += CFileManager.readFromFile(str(objRow[0]))
+
+	return strOutput
