@@ -41,9 +41,9 @@ def getDocumentsCount():
 		with objConnection.cursor() as objCursor:
 			strSQL = "SELECT MAX(intDocNo) FROM tblCorpus"
 
-			strSQL = "SELECT strKeywords FROM tblKeywords"
-
 			objCursor.execute(strSQL)
+
+			return "owen"
 			intCount = objCursor.fetchone()[0]
 	except:
 		intCount = -99
