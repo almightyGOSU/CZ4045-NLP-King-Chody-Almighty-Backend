@@ -34,6 +34,9 @@ def insertNewSource(pObjSource):
 	return intId
 
 def getDocumentsCount():
+
+	return "owen"
+
 	try:
 		with objConnection.cursor() as objCursor:
 
