@@ -1,5 +1,6 @@
-import CDALSource;
-from CCorpusManager import CCorpusManager;
+import CDALSource
+import CFileManager
+from CCorpusManager import CCorpusManager
 from CSource import CSource
 from flask import url_for
 import CDALType
@@ -23,4 +24,8 @@ def addNewSource(pJsonSource):
 	return url_for('getSource', source_id=intId, _external=True)
 
 def getSource(pIntId):
-	return CDALSource.getSource(pIntId)
+	objRow = CDALSource.getSource(pIntId)
+
+	objRow[0] = CFileManager.readFromFile(str(objRow[0]))
+
+	return objRow

@@ -8,9 +8,12 @@ def getSource(pIntId):
 		with objConnection.cursor() as objCursor:
 			strSQL = "SELECT * FROM  tblCorpus WHERE  intDocNo =%s"
 
-			objCursor.execute(strSQL, (pIntId))
+			objCursor.execute(strSQL, pIntId)
 
-			aryResult = objCursor.fetchone()
+			objRow = objCursor.fetchone()
+
+			aryResult = [objRow[0], objRow[1], objRow[2], objRow[3], objRow[4]]
+
 	except:
 		aryResult = []
 	finally:

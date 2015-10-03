@@ -59,7 +59,12 @@ def getDocumentCount():
 
 @app.route("/source/<int:source_id>", methods=["GET"])
 def getSource(source_id):
-	return CSourceManager.getSource(source_id)
+	strOutput = ""
+	for strWord in CSourceManager.getSource(source_id):
+		strOutput += str(strWord)
+		strOutput += "<br/>"
+
+	return strOutput
 
 if __name__ == "__main__":
 	app.debug = True
