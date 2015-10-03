@@ -35,18 +35,17 @@ def insertNewSource(pObjSource):
 
 def getDocumentsCount():
 
-	return "owen"
+	objConnection = CDBManager.getDBConnection()
 
-	##try:
-	##	with objConnection.cursor() as objCursor:
-##
-##			strSQL = "SELECT MAX(intDocNo) FROM tblCorpus"
-##
-##			objCursor.execute(strSQL)
-##			intCount = objCursor.fetchone()[0]
-##	except:
-##		intCount = -99
-##	finally:
-##		objConnection.close()
+	try:
+		with objConnection.cursor() as objCursor:
+			strSQL = "SELECT MAX(intDocNo) FROM tblCorpus"
 
-##	return intCount
+			objCursor.execute(strSQL)
+			intCount = objCursor.fetchone()[0]
+	except:
+		intCount = -99
+	finally:
+		objConnection.close()
+
+	return intCount
