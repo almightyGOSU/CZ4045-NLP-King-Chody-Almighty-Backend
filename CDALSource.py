@@ -44,11 +44,9 @@ def getDocumentsCount():
 			objCursor.execute(strSQL)
 
 			intCount = objCursor.fetchone()[0]
-
-			return intCount
 	except:
 		intCount = -99
 	finally:
 		objConnection.close()
 
-	return intCount
+	return str(intCount)
