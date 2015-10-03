@@ -3,6 +3,7 @@ import CKeywordManager
 import CSourceManager
 import config
 from CCorpusManager import CCorpusManager
+from flask import Response
 
 from nltk.corpus import brown
 
