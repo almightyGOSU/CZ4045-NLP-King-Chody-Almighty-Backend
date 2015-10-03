@@ -66,6 +66,10 @@ def getSource(source_id):
 
 	return strOutput
 
+@app.route("/source/all")
+def getFullSource():
+	return str(CSourceManager.getFullSource())
+
 if __name__ == "__main__":
 	app.debug = True
 	##CCorpusManager.loadTokens()

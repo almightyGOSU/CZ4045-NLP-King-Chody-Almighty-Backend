@@ -35,6 +35,6 @@ def getFullSource():
 	strOutput = ""
 
 	for intCount in CCorpusManager.getDocumentsCount():
-		strOutput += CFileManager.readFromFile(str(objRow[0]))
+		strOutput += CFileManager.readFromFile(str(intCount))
 
 	return strOutput
