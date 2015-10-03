@@ -1,5 +1,6 @@
 import threading
 import CDALType
+import CDALSource
 
 class CCorpusManager:
 	objLock = threading.Lock()
@@ -22,3 +23,6 @@ class CCorpusManager:
 
 	def loadTokens():
 		CCorpusManager.lstTokens = CDALType.getTypes()
+
+	def getDocumentsCount():
+		return CDALSource.getDocumentsCount()

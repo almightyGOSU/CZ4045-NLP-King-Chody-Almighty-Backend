@@ -32,3 +32,18 @@ def insertNewSource(pObjSource):
 	CFileManager.saveToFile(str(intId), pObjSource.getContents())
 
 	return intId
+
+def getDocumentCount():
+	try:
+		with objConnection.cursor() as objCursor:
+
+			strSQL = "SELECT MAX(intDocNo) FROM tblCorpus"
+
+			objCursor.execute(strSQL)
+			intCount = objCursor.fetchone()[0]
+	except:
+		intCount = -99
+	finally:
+		objConnection.close()
+
+	return intCount;
