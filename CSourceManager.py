@@ -40,7 +40,6 @@ def getSourceTokens(pIntId):
 
 	objSource = CSource("A", strText, "A")
 
-	return objSource.getSource();
-
-    ##return objSource.getURL()
+	return objSource.getToken()
+	
 	##return strText
