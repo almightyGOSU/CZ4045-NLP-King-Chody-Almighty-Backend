@@ -60,7 +60,14 @@ def getDocumentCount():
 
 @app.route("/source/token/<int:source_id>", methods=["GET"])
 def getSourceTokens(source_id):
-	return CSourceManager.getSourceTokens(source_id)
+
+	strOutput = ""
+
+	for strToken in CSourceManager.getSourceTokens(source_id):
+		strOutput += str(strToken)
+		strOutput += "<br/>"
+
+	return strOutput
 
 @app.route("/source/tags/<int:source_id>", methods=["GET"])
 def getSourceTags(source_id):
