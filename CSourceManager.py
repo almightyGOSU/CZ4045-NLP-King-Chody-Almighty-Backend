@@ -40,5 +40,5 @@ def getSourceTokens(pIntId):
 
 	objSource = CSource("", strText, "")
 
-    ##return objSource.getToken()
-	return strText
+    return objSource.getToken()
+	##return strText
