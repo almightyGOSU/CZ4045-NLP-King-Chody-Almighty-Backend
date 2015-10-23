@@ -37,7 +37,8 @@ class CSource:
 		return self._strContents
 
 	def getToken(self):
-		return self._lstToken;
+		##return self._lstToken
+		return "Owen"
 
 	def getPOSTags(self):
 		return "";
