@@ -41,4 +41,4 @@ class CSource:
 		return self._lstToken
 	
 	def getPOSTags(self):
-		return nltk.pos_tag("owen")
+		return nltk.pos_tag(self._lstToken)
