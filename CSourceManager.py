@@ -38,7 +38,7 @@ def getFullSource():
 def getSourceTokens(pIntId):
 	strText = CFileManager.readFromFile(str(pIntId))
 
-	objSource = CSource("", strText, "")
+	objSource = CSource("A", strText, "A")
 
-    ##return objSource.getToken()
-	return strText
+    return objSource.getURL()
+	##return strText
