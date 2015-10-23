@@ -1,4 +1,4 @@
-from nltk.tokenize import sent_tokenize, word_tokenize
+from nltk.tokenize import sent_tokenize, word_tokenize, pos_tag
 
 class CSource:
 
@@ -40,4 +40,4 @@ class CSource:
 		return self._lstToken
 	
 	def getPOSTags(self):
-		return "Owen"
+		return pos_tag("Owen")
