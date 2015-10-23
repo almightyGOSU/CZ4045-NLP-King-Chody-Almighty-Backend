@@ -41,4 +41,4 @@ class CSource:
 		return "Owen"
 
 	def getPOSTags(self):
-		return "";
+		return "Owen"
