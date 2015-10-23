@@ -41,3 +41,10 @@ def getSourceTokens(pIntId):
 	objSource = CSource("A", strText, "A")
 
 	return objSource.getToken()
+
+def getSourcePOS(pIntId):
+	strText = CFileManager.readFromFile(str(pIntId))
+
+	objSource = CSource("A", strText, "A")
+
+	return objSource.getPOSTags()

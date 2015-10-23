@@ -71,8 +71,8 @@ def getSourceTokens(source_id):
 
 @app.route("/source/tags/<int:source_id>", methods=["GET"])
 def getSourceTags(source_id):
-	return "Charles Seah"
-
+	return CSourceManager.getSourcePOS(source_id)
+	
 @app.route("/source/<int:source_id>", methods=["GET"])
 def getSource(source_id):
 	strOutput = ""
