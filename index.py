@@ -58,6 +58,14 @@ def addSource():
 def getDocumentCount():
 	return str(CCorpusManager.getDocumentsCount())
 
+@app.route("/source/token/<int:source_id>", methods=["GET"])
+def getSourceTokens(source_id):
+	return "Owen Seah"
+
+@app.route("/source/tags/<int:source_id>", methods=["GET"])
+def getSourceTags(source_id):
+	return "Charles Seah"
+
 @app.route("/source/<int:source_id>", methods=["GET"])
 def getSource(source_id):
 	strOutput = ""
