@@ -38,7 +38,7 @@ def getFullSource():
 def getSourceTokens(pIntId):
 	strText = CFileManager.readFromFile(str(pIntId))
 
-	objSource = CSource("", strText, "");
+	objSource = CSource("", strText, "")
 
-    return objSource.getToken();
+    return objSource.getToken()
 	##return "Owen"
