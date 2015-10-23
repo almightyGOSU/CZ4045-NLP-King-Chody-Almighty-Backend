@@ -71,8 +71,14 @@ def getSourceTokens(source_id):
 
 @app.route("/source/tags/<int:source_id>", methods=["GET"])
 def getSourceTags(source_id):
-	return CSourceManager.getSourcePOS(source_id)
-	
+	strOutput = ""
+
+	for strToken in CSourceManager.getSourcePOS(source_id):
+		strOutput += str(strToken)
+		strOutput += "<br/>"
+
+	return strOutput
+
 @app.route("/source/<int:source_id>", methods=["GET"])
 def getSource(source_id):
 	strOutput = ""
