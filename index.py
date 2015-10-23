@@ -60,7 +60,7 @@ def getDocumentCount():
 
 @app.route("/source/token/<int:source_id>", methods=["GET"])
 def getSourceTokens(source_id):
-	return "Owen Seah"
+	return CSourceManager.getSourceTokens();
 
 @app.route("/source/tags/<int:source_id>", methods=["GET"])
 def getSourceTags(source_id):

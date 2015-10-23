@@ -34,3 +34,11 @@ def getFullSource():
 
 	for intCount in range(1, CCorpusManager.getDocumentsCount() + 1):
 		yield "</br>" + CFileManager.readFromFile(str(intCount))
+
+def getSourceTokens(pIntId):
+	strText = CFileManager.readFromFile(str(pIntId))
+
+	objSource = CSource("", strText, "");
+
+	return objSource.getToken();
+
