@@ -92,9 +92,9 @@ def getSource(source_id):
 def getFullSource():
 	return Response(CSourceManager.getFullSource(), mimetype='text/html')
 
-@app.route("/stats/concordance/<word>")
-def getCorpusConcordance(word):
-	return word
+@app.route("/stats/concordance", methods=["GET"])
+def getCorpusConcordance():
+	return "owen"
 	##strOutput = ""
 	##for strWord in CSourceManager.getSourceConcordance(word):
 	##	strOutput += str(strWord)
@@ -102,9 +102,9 @@ def getCorpusConcordance(word):
 
 	##return strOutput
 
-@app.route("/stats/similar/<word>")
-def getCorpusConcordance(word):
-	return word
+@app.route("/stats/similar" , methods=["GET"])
+def getCorpusConcordance():
+	return "owen"
 	##strOutput = "" 
 	##for strWord in CSourceManager.getSourceSimilarity(word):
 	##	strOutput += str(strWord)
