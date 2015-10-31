@@ -94,7 +94,7 @@ def getFullSource():
 
 @app.route("/stats/concordance", methods=["GET"])
 def getCorpusConcordance():
-	return "owen"
+	return 'owen'
 	##strOutput = ""
 	##for strWord in CSourceManager.getSourceConcordance(word):
 	##	strOutput += str(strWord)
@@ -104,7 +104,7 @@ def getCorpusConcordance():
 
 @app.route("/stats/similar" , methods=["GET"])
 def getCorpusConcordance():
-	return "owen"
+	return 'owen'
 	##strOutput = "" 
 	##for strWord in CSourceManager.getSourceSimilarity(word):
 	##	strOutput += str(strWord)
