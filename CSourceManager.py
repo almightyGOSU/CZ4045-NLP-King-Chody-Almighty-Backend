@@ -51,8 +51,9 @@ def getSourcePOS(pIntId):
 	return objSource.getPOSTags()
 
 def getSourceConcordance(pStrWord):
-	return CDALSource.getTypes()
+	lstTokens = CDALSource.getTypes()
+	return Text(lstTokens).concordance(pStrWord)
 
 def getSourceSimilarity(pStrWord):
 	lstTokens = CDALSource.getTypes()
-	return Text(tokens).similar(pStrWord)
+	return Text(lstTokens).similar(pStrWord)
