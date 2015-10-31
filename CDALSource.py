@@ -71,3 +71,17 @@ def getDocumentsCount():
 		objConnection.close()
 
 	return intCount
+
+def getTypes():
+	objConnection = CDBManager.getDBConnection()
+
+	try:
+	    with objConnection.cursor() as objCursor:
+	        # Read a single record
+	        strSQL = "SELECT strWord FROM tblTypes"
+	        objCursor.execute(strSQL)
+        	lstKeywords = [row[0] for row in objCursor.fetchall()]
+	finally:
+   		objConnection.close()
+
+	return lstKeywords
