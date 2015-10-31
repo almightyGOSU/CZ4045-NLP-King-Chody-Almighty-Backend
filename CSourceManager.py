@@ -53,19 +53,19 @@ def getSourcePOS(pIntId):
 def getSourceConcordance(pStrWord , left_margin = 10, right_margin = 10):
 	lstTokens = CDALSource.getTypes()     
    
-    text = Text(lstTokens)
-    c = ConcordanceIndex(text.tokens, key = lambda s: s.lower())
+   ## text = Text(lstTokens)
+   ## c = ConcordanceIndex(text.tokens, key = lambda s: s.lower())
  
-    concordance_txt = ([text.tokens[map(lambda x: x-5 if (x-left_margin)>0 else 0,[offset])[0]:offset+right_margin]
+   ## concordance_txt = ([text.tokens[map(lambda x: x-5 if (x-left_margin)>0 else 0,[offset])[0]:offset+right_margin]
                         for offset in c.offsets(pStrWord)])
                          
-    return [''.join([x+' ' for x in con_sub]) for con_sub in concordance_txt]
+    return lstTokens
 
 def getSourceSimilarity(pStrWord):
 
 	idx = ContextIndex([word.lower( ) for word in CDALSource.getTypes()])
-	save = [ ]
+	save = []
 
-    save.append(idx.similar_words(pStrWord))
+    ##save.append(idx.similar_words(pStrWord))
 
 	return save
