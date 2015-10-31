@@ -94,21 +94,23 @@ def getFullSource():
 
 @app.route("/stats/concordance/<word>")
 def getCorpusConcordance(word):
-	strOutput = ""
-	for strWord in CSourceManager.getSourceConcordance(word):
-		strOutput += str(strWord)
-		strOutput += "<br/>"
+	return word
+	##strOutput = ""
+	##for strWord in CSourceManager.getSourceConcordance(word):
+	##	strOutput += str(strWord)
+	##	strOutput += "<br/>"
 
-	return strOutput
+	##return strOutput
 
 @app.route("/stats/similar/<word>")
 def getCorpusConcordance(word):
-	strOutput = "" 
-	for strWord in CSourceManager.getSourceSimilarity(word):
-		strOutput += str(strWord)
-		strOutput += "<br/>"
+	return word
+	##strOutput = "" 
+	##for strWord in CSourceManager.getSourceSimilarity(word):
+	##	strOutput += str(strWord)
+	##	strOutput += "<br/>"
 
-	return strOutput
+	##return strOutput
 
 if __name__ == "__main__":
 	app.debug = True
