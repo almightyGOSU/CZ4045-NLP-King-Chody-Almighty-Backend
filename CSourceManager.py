@@ -50,9 +50,16 @@ def getSourcePOS(pIntId):
 
 	return objSource.getPOSTags()
 
-def getSourceConcordance(pStrWord):
-	lstTokens = CDALSource.getTypes()
-	return Text(lstTokens).concordance(pStrWord)
+def getSourceConcordance(pStrWord , left_margin = 10, right_margin = 10):
+	lstTokens = CDALSource.getTypes()     
+   
+    text = nltk.Text(lstTokens)
+    c = nltk.ConcordanceIndex(text.tokens, key = lambda s: s.lower())
+ 
+    concordance_txt = ([text.tokens[map(lambda x: x-5 if (x-left_margin)>0 else 0,[offset])[0]:offset+right_margin]
+                        for offset in c.offsets(pStrWord)])
+                         
+    return [''.join([x+' ' for x in con_sub]) for con_sub in concordance_txt]
 
 def getSourceSimilarity(pStrWord):
 	lstTokens = CDALSource.getTypes()
