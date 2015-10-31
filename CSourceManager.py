@@ -63,5 +63,10 @@ def getSourceConcordance(pStrWord , left_margin = 10, right_margin = 10):
     return [''.join([x+' ' for x in con_sub]) for con_sub in concordance_txt]
 
 def getSourceSimilarity(pStrWord):
-	lstTokens = CDALSource.getTypes()
-	return Text(lstTokens).similar(pStrWord)
+
+	idx = nltk.text.ContextIndex([word.lower( ) for word in CDALSource.getTypes()])
+	save = [ ]
+
+    save.append(idx.similar_words(pStrWord))
+
+	return save
