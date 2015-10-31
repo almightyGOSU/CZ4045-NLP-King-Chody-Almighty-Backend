@@ -4,9 +4,7 @@ from CCorpusManager import CCorpusManager
 from CSource import CSource
 from flask import url_for
 import CDALType
-import nltk
-import nltk.text
-import nltk.corpus
+from nltk.tokenize import word_tokenize
 
 def addNewSource(pJsonSource):
 
@@ -56,6 +54,12 @@ def getSourceConcordance(pStrWord):
 	return CDALSource.getTypes()
 
 def getSourceSimilarity(pStrWord):
-	objCI = nltk.text.ContextIndex([word.lower() for word in nltk.corpus.brown.words()])
+
+	strText = ""
+
+	for intCount in range(1, CCorpusManager.getDocumentsCount() + 1):
+		strText +=  CFileManager.readFromFile(str(intCount))
+
+	objCI = nltk.text.ContextIndex([word.lower() for word in word_tokenize(strText)])
 	#objCI = nltk.text.ContextIndex(['tasty','fluffy','yummy','','','','',''])
 	return objCI.similar_words(pStrWord)
