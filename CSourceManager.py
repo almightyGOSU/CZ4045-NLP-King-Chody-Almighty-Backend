@@ -48,3 +48,9 @@ def getSourcePOS(pIntId):
 	objSource = CSource("A", strText, "A")
 
 	return objSource.getPOSTags()
+
+def getSourceConcordance(pStrWord):
+	return ["owen" , pStrWord]
+
+def getSourceSimilarity(pStrWord):
+	return ["Charles", pStrWord]
