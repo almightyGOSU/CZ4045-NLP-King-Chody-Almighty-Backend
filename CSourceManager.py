@@ -5,6 +5,7 @@ from CSource import CSource
 from flask import url_for
 import CDALType
 from nltk.text import Text
+import nltk
 
 def addNewSource(pJsonSource):
 
