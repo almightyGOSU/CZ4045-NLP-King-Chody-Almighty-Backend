@@ -4,7 +4,6 @@ from CCorpusManager import CCorpusManager
 from CSource import CSource
 from flask import url_for
 import CDALType
-from nltk.text import ContextIndex,ConcordanceIndex, Text
 
 def addNewSource(pJsonSource):
 
@@ -50,7 +49,7 @@ def getSourcePOS(pIntId):
 
 	return objSource.getPOSTags()
 
-def getSourceConcordance(pStrWord , left_margin = 10, right_margin = 10):
+def getSourceConcordance(pStrWord):
 	lstTokens = CDALSource.getTypes()     
    
    ## text = Text(lstTokens)
@@ -63,9 +62,9 @@ def getSourceConcordance(pStrWord , left_margin = 10, right_margin = 10):
 
 def getSourceSimilarity(pStrWord):
 
-	idx = ContextIndex([word.lower( ) for word in CDALSource.getTypes()])
-	save = []
+	#idx = ContextIndex([word.lower( ) for word in CDALSource.getTypes()])
+	#save = []
 
     ##save.append(idx.similar_words(pStrWord))
 
-	return save
+	return CDALSource.getTypes()
