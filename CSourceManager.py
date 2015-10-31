@@ -57,7 +57,7 @@ def getSourceConcordance(pStrWord , left_margin = 10, right_margin = 10):
    ## c = ConcordanceIndex(text.tokens, key = lambda s: s.lower())
  
    ## concordance_txt = ([text.tokens[map(lambda x: x-5 if (x-left_margin)>0 else 0,[offset])[0]:offset+right_margin]
-                        for offset in c.offsets(pStrWord)])
+   ###                     for offset in c.offsets(pStrWord)])
                          
     return lstTokens
 
