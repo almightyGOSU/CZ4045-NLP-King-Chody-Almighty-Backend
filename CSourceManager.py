@@ -56,10 +56,13 @@ def getSourceConcordance(pStrWord):
 def getSourceSimilarity(pStrWord):
 
 	strText = ""
+	lstTokens = []
 
 	for intCount in range(1, CCorpusManager.getDocumentsCount() + 1):
-		strText +=  CFileManager.readFromFile(str(intCount))
+		lstTokens += word_tokenize(CFileManager.readFromFile(str(intCount)))
 
-	objCI = nltk.text.ContextIndex([word.lower() for word in word_tokenize(strText)])
+	return lstTokens
+
+	#objCI = nltk.text.ContextIndex([word.lower() for word in lstTokens])
 	#objCI = nltk.text.ContextIndex(['tasty','fluffy','yummy','','','','',''])
-	return objCI.similar_words(pStrWord)
+	#return objCI.similar_words(pStrWord)
