@@ -6,6 +6,7 @@ from flask import url_for
 import CDALType
 import nltk
 import nltk.text
+import nltk.corpus
 
 def addNewSource(pJsonSource):
 
@@ -55,5 +56,6 @@ def getSourceConcordance(pStrWord):
 	return CDALSource.getTypes()
 
 def getSourceSimilarity(pStrWord):
-	objCI = nltk.text.ContextIndex([word.lower() for word in CDALSource.getTypes()])
+	objCI = nltk.text.ContextIndex([word.lower() for word in nltk.corpus.brown.words()])
+	#objCI = nltk.text.ContextIndex(['tasty','fluffy','yummy','','','','',''])
 	return objCI.similar_words(pStrWord)
