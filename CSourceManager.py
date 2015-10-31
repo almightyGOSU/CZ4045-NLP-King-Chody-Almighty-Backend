@@ -55,5 +55,5 @@ def getSourceConcordance(pStrWord):
 	return CDALSource.getTypes()
 
 def getSourceSimilarity(pStrWord):
-	nltk.text.ContextIndex([word.lower() for word in CDALSource.getTypes()])
-	return CDALSource.getTypes()
+	objCI = nltk.text.ContextIndex([word.lower() for word in CDALSource.getTypes()])
+	return objCI.similar_words(pStrWord)
