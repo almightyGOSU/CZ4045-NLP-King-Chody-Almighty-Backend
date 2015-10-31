@@ -103,7 +103,7 @@ def getCorpusConcordance():
 	##return strOutput
 
 @app.route("/stats/similar" , methods=["GET"])
-def getCorpusConcordance():
+def getCorpusSimilarity():
 	return 'owen'
 	##strOutput = "" 
 	##for strWord in CSourceManager.getSourceSimilarity(word):

@@ -49,8 +49,8 @@ def getSourcePOS(pIntId):
 
 	return objSource.getPOSTags()
 
-def getSourceConcordance(pStrWord):
-	return ["owen" , pStrWord]
+#def getSourceConcordance(pStrWord):
+##	return ["owen" , pStrWord]
 
-def getSourceSimilarity(pStrWord):
-	return ["Charles", pStrWord]
+##def getSourceSimilarity(pStrWord):
+##	return ["Charles", pStrWord]
