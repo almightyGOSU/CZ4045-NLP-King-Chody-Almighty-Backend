@@ -40,7 +40,7 @@ def getTypes():
 
 @app.route("/summary", methods=["GET"])
 def getCorpusSummary():
-	return "Owen Doc Count, Owen Token Count, Owen Type Count, Owen Sent Count"
+	return "Chin Yao Doc Count, Owen Token Count, Charles Type Count, Yong Lun Sent Count"
 
 @app.route("/keywords", methods=["GET"])
 def getKeywords():
