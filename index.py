@@ -38,6 +38,10 @@ def getTypes():
 
 	return strOutput
 
+@app.route("/summary", methods=["GET"])
+def getCorpusSummary():
+	return "Owen Doc Count, Owen Token Count, Owen Type Count, Owen Sent Count"
+
 @app.route("/keywords", methods=["GET"])
 def getKeywords():
 	lstKeywords = CKeywordManager.getAllKeywords()
