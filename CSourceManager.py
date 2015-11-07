@@ -32,6 +32,7 @@ def getSource(pIntId):
 	return objRow
 
 def getCorpusSummary():
+	return ["owen","owen", "owen", "owen"]
 	return CDALSource.getCorpusSummary()
 
 def getFullSource():
