@@ -42,7 +42,7 @@ def getTypes():
 def getCorpusSummary():
 	lstStats = CSourceManager.getCorpusSummary()
 
-	return "<html><body><table border='1' style='width:25%;border-collapse:collapse;margin: auto;'><tr><th>Corpus Stats</th><th>Count</th></tr><tr><td>Document</td><td>" + str(lstStats[0]) + "</td></tr><tr><td>Token</td><td>" + str(lstStats[1]) + "</td></tr><tr><td>Type</td><td>" + str(lstStats[2]) + "</td></tr><tr><td>Sentence</td><td>" + str(lstStats[3]) + "</td></tr></table><footer>Call <strong style='color: #FF0000;'>+65 9017 2413</strong> for any technical issues</footer></body></html>"
+	return "<html><body><table border='1' style='width:25%;border-collapse:collapse;margin: auto;'><tr><th>Corpus Stats</th><th>Count</th></tr><tr><td>Document</td><td>" + str(lstStats[0]) + "</td></tr><tr><td>Token</td><td>" + str(lstStats[1]) + "</td></tr><tr><td>Type</td><td>" + str(lstStats[2]) + "</td></tr><tr><td>Sentence</td><td>" + str(lstStats[3]) + "</td></tr></table></body><footer>Call <strong style='color: #FF0000;'>+65 9017 2413</strong> for any technical issues</footer></html>"
 
 @app.route("/keywords", methods=["GET"])
 def getKeywords():
