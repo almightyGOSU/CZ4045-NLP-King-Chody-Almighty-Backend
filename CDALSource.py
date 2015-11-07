@@ -85,3 +85,18 @@ def getTypes():
    		objConnection.close()
 
 	return lstKeywords
+
+def getCorpusSummary():
+
+	objConnection = CDBManager.getDBConnection()
+
+	try:
+	    with objConnection.cursor() as objCursor:
+	        # Read a single record
+	        strSQL = "SELECT count(intDocNo) FROM tblCorpus UNION SELECT count(strWord) FROM `tblTypes` UNION SELECT SUM(`intTokenCount`) FROM `tblCorpus` UNION SELECT SUM(`intSentenceCount`) FROM `tblCorpus`"
+	        objCursor.execute(strSQL)
+        	lstStats = [row[0] for row in objCursor.fetchall()]
+	finally:
+   		objConnection.close()
+
+	return lstStats

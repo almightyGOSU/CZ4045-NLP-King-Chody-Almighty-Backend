@@ -31,6 +31,9 @@ def getSource(pIntId):
 
 	return objRow
 
+def getCorpusSummary():
+	return CDALSource.getCorpusSummary();
+
 def getFullSource():
 
 	for intCount in range(1, CCorpusManager.getDocumentsCount() + 1):

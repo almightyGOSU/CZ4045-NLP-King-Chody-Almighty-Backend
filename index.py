@@ -40,7 +40,9 @@ def getTypes():
 
 @app.route("/summary", methods=["GET"])
 def getCorpusSummary():
-	return "Chin Yao Doc Count, Owen Token Count, Charles Type Count, +65 9017 2413 Sent Count"
+
+	lstStats = CSourceManager.getCorpusSummary()
+	return lstStats[0] + " Document Count<br/>" + lstStats[1] + " Token Count<br/>" +lstStats[2] + " Type Count<br/>" + lstStats[3] + " Sentence Count<br/>Call <strong style='color: #FF0000;'>+65 9017 2413<strong> for any technical Issues"
 
 @app.route("/keywords", methods=["GET"])
 def getKeywords():
