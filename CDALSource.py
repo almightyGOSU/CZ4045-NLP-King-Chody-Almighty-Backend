@@ -95,7 +95,8 @@ def getCorpusSummary():
 	        # Read a single record
 	        strSQL = "SELECT COUNT(intDocNo) FROM `tblCorpus`"
 	        objCursor.execute(strSQL)
-	        lstStats = [objCursor.fetchone()[0],"owen", "owen", "owen"]
+	        x = objCursor.fetchone()[0]
+	        lstStats = [x,"owen", "owen", "owen"]
         	#lstStats = objCursor.fetchone()[0]
 	finally:
    		objConnection.close()
