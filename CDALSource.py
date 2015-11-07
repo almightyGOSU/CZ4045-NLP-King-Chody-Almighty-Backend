@@ -96,7 +96,7 @@ def getCorpusSummary():
 	        strSQL = "SELECT count(intDocNo) FROM tblCorpus UNION SELECT count(strWord) FROM `tblTypes` UNION SELECT SUM(`intTokenCount`) FROM `tblCorpus` UNION SELECT SUM(`intSentenceCount`) FROM `tblCorpus`"
 	        objCursor.execute(strSQL)
 	        #lstStats = ["owen","owen", "owen", "owen"]
-        	lstStats = [row for row in objCursor.fetchall()]
+        	lstStats = objCursor.fetchall()
 	finally:
    		objConnection.close()
 
