@@ -42,7 +42,7 @@ def getTypes():
 def getCorpusSummary():
 	lstStats = CSourceManager.getCorpusSummary()
 
-	return "<html><body><table><tr><td>" + str(lstStats[0]) + "</td><td>Document Count</td></tr><tr><td>" + str(lstStats[1]) + "</td><td>Token Count</td></tr><tr><td>" + str(lstStats[2]) + "</td><td>Type Count</td></tr><tr><td>" + str(lstStats[3]) + "</td><td>Sentence Count</td></tr></table><div>Call <strong style='color: #FF0000;'>+65 9017 2413</strong> for any technical issues</div></body></html>"
+	return "<html><body><table border='1'><th><td>Something</td><td>Status</td><tr><td>Document Count</td><td>" + str(lstStats[0]) + "</td></tr><tr><td>Token Count</td><td>" + str(lstStats[1]) + "</td></tr><tr><td>Type Count</td><td>" + str(lstStats[2]) + "</td></tr><tr><td>Sentence Count</td><td>" + str(lstStats[3]) + "</td></tr></table><div>Call <strong style='color: #FF0000;'>+65 9017 2413</strong> for any technical issues</div></body></html>"
 
 @app.route("/keywords", methods=["GET"])
 def getKeywords():
